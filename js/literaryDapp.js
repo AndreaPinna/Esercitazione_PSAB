@@ -1,3 +1,7 @@
+// SPDX-License-Identifier: GPL-3.0
+/// @title Esempio applicazione Web3
+/// @author Andrea Pinna
+
 // Documentation
 // https://github.com/ethereum/wiki/wiki/JavaScript-API
 
@@ -17,8 +21,6 @@ window.addEventListener('load', function () {
     }
     window.ethereum.enable(startApp());
 
-    // Now you can start your app & access web3 freely:
-    //startApp()
 
 });
 
@@ -60,19 +62,7 @@ var startApp = function () {
 //Esercizio 4
 var loadContractInfo = function (address, callback) {
     numberOfCompositions = 0;
-    $.getJSON("solidity/LiteraryWorks.abi.json", function (cABI) {
-        const LWContract = web3.eth.contract(cABI).at(address);
-        LWContract.getNumberOfCompositions.call(
-            (err, res) => {
-                if (err != null) {
-                    alert('There was an error fetching the contract.');
-                } else {
-                    numberOfCompositions = web3.toDecimal(res);
-                    callback(numberOfCompositions)
-
-                }
-            });
-    });
+    //TODO
 }
 
 
